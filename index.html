@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrameShare Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero-shell slim-shell">
+            <nav class="topbar">
+                <a href="index.html" class="brand">FrameShare Studio</a>
+                <div class="nav-links">
+                    <a href="index.html" class="active-link">Home</a>
+                    <a href="post.html">Post</a>
+                    <a href="my-posts.html">My Posts</a>
+                    <a href="profile.html">Profile</a>
+                </div>
+                <a class="nav-cta" href="post.html">Create Or Upload</a>
+            </nav>
+
+            <section class="hero page-hero">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Dark mode workspace</p>
+                    <h1>Share moments in a cleaner night-view studio.</h1>
+                    <p class="hero-text">
+                        Create spaces, publish media, review your own uploads, and share direct viewer links.
+                        Login now opens as a popup on every page visit.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="post.html">Start Posting</a>
+                        <button class="btn btn-secondary" id="seedDemoBtn" type="button">Load Demo Space</button>
+                    </div>
+                    <div class="hero-stats compact-stats">
+                        <article>
+                            <strong id="totalSpaces">0</strong>
+                            <span>Spaces</span>
+                        </article>
+                        <article>
+                            <strong id="totalMembers">0</strong>
+                            <span>Members</span>
+                        </article>
+                        <article>
+                            <strong id="totalPosts">0</strong>
+                            <span>Posts</span>
+                        </article>
+                    </div>
+                </div>
+                <aside class="hero-showcase reveal delay-1">
+                    <div class="showcase-head">
+                        <span class="live-pill">Selected Space</span>
+                        <span class="showcase-status" id="heroSpaceName">No space yet</span>
+                    </div>
+                    <div class="share-preview glass-panel no-top-margin">
+                        <div>
+                            <p class="micro-label">Current share link</p>
+                            <strong id="heroShareLink">Create a space from the post page</strong>
+                        </div>
+                        <button type="button" id="copyHeroLink" class="subtle-button">Copy</button>
+                    </div>
+                </aside>
+            </section>
+        </header>
+
+        <main>
+            <section class="section two-panel">
+                <div class="section-title reveal">
+                    <p class="eyebrow">Saved Spaces</p>
+                    <h2>Open any space and jump to the right page.</h2>
+                    <p>Each card links to the uploader, the shared viewer, and your personal post history.</p>
+                </div>
+                <div class="section-actions reveal delay-1">
+                    <a class="btn btn-primary" href="post.html">Create New Space</a>
+                    <a class="btn btn-secondary" href="my-posts.html">Open My Posts</a>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="space-grid" id="spaceGrid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/google-sheet-config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth-gate.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
