@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero-shell slim-shell">
+            <nav class="topbar">
+                <a href="index.html" class="brand">FrameShare Studio</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="post.html">Post</a>
+                    <a href="my-posts.html">My Posts</a>
+                    <a href="profile.html" class="active-link">Profile</a>
+                </div>
+                <a class="nav-cta" href="post.html">Upload More</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="section split-layout">
+                <div class="profile-hero reveal">
+                    <p class="eyebrow">Profile Page</p>
+                    <h2 id="profileName">No active member</h2>
+                    <p id="profileRole">Log in and join a space from the post page so your profile can be tracked here.</p>
+                </div>
+                <div class="summary-card reveal delay-1">
+                    <p class="micro-label">Current activity</p>
+                    <div class="mini-stats">
+                        <article>
+                            <strong id="profileSpaces">0</strong>
+                            <span>Spaces joined</span>
+                        </article>
+                        <article>
+                            <strong id="profilePosts">0</strong>
+                            <span>Posts shared</span>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section workspace-section">
+                <div class="workspace-main reveal">
+                    <div class="section-title narrow">
+                        <p class="eyebrow">Memberships</p>
+                        <h2>Spaces connected to this profile.</h2>
+                    </div>
+                    <div class="space-grid" id="membershipGrid"></div>
+                </div>
+                <aside class="control-stack reveal delay-1">
+                    <section class="control-card glow-card">
+                        <div class="card-topline">
+                            <p class="eyebrow">Quick Links</p>
+                            <span>01</span>
+                        </div>
+                        <a class="btn btn-secondary wide" href="post.html">Open Posting</a>
+                        <a class="btn btn-secondary wide" href="my-posts.html">View My Posts</a>
+                    </section>
+                </aside>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/google-sheet-config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth-gate.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
