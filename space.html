@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Space Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero-shell slim-shell">
+            <nav class="topbar">
+                <a href="index.html" class="brand">FrameShare Studio</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="post.html">Post</a>
+                    <a href="my-posts.html">My Posts</a>
+                    <a href="profile.html">Profile</a>
+                </div>
+                <a class="nav-cta" href="post.html">Join Or Upload</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="section split-layout">
+                <div class="section-title reveal">
+                    <p class="eyebrow">Shared Viewer</p>
+                    <h2 id="spaceTitle">Open a shared space</h2>
+                    <p id="spaceDescription">Use a link like <code>space.html?space=your-slug</code> to open the right gallery.</p>
+                </div>
+                <div class="summary-card reveal delay-1">
+                    <p class="micro-label">Space details</p>
+                    <h3 id="spaceOwner">Owner: -</h3>
+                    <p id="spaceMembers">0 members</p>
+                    <div class="summary-actions">
+                        <button type="button" class="btn btn-secondary" id="copyViewerLink">Copy Link</button>
+                        <a class="btn btn-secondary" id="postIntoSpaceLink" href="post.html">Post Into This Space</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="media-grid wide-media-grid" id="sharedMediaGrid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/google-sheet-config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth-gate.js"></script>
+    <script src="js/space.js"></script>
+</body>
+</html>
