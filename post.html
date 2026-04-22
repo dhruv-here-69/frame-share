@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post To FrameShare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero-shell slim-shell">
+            <nav class="topbar">
+                <a href="index.html" class="brand">FrameShare Studio</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="post.html" class="active-link">Post</a>
+                    <a href="my-posts.html">My Posts</a>
+                    <a href="profile.html">Profile</a>
+                </div>
+                <a class="nav-cta" href="my-posts.html">See My Uploads</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="section split-layout">
+                <div class="section-title reveal">
+                    <p class="eyebrow">Posting Page</p>
+                    <h2>Create a space, join it, and upload media here.</h2>
+                    <p>This page owns the posting flow so upload logic stays separate from profile and viewing pages.</p>
+                    <p class="status-line" id="authStatus">Waiting for login...</p>
+                </div>
+                <div class="summary-card reveal delay-1">
+                    <p class="micro-label">Active space</p>
+                    <h3 id="activeSpaceName">No space selected</h3>
+                    <p id="activeSpaceMeta">Create a space below or choose one from the dropdown.</p>
+                    <div class="summary-actions">
+                        <button type="button" class="btn btn-secondary" id="copyLinkBtn">Copy Link</button>
+                        <a class="btn btn-secondary" id="openViewerLink" href="space.html">Open Viewer</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section workspace-section">
+                <div class="workspace-main reveal">
+                    <div class="control-card glow-card">
+                        <div class="card-topline">
+                            <p class="eyebrow">Pick Space</p>
+                            <span>01</span>
+                        </div>
+                        <label>
+                            Saved spaces
+                            <select id="spaceSelect"></select>
+                        </label>
+                        <p class="helper-text">Switch which space you want to post into.</p>
+                    </div>
+
+                    <form class="control-card glow-card" id="createSpaceForm">
+                        <div class="card-topline">
+                            <p class="eyebrow">Create Space</p>
+                            <span>02</span>
+                        </div>
+                        <label>
+                            Space name
+                            <input name="name" type="text" placeholder="Ex. College Farewell" required>
+                        </label>
+                        <label>
+                            Your name
+                            <input name="owner" type="text" placeholder="Login name will be used" required>
+                        </label>
+                        <label>
+                            Link slug
+                            <input name="slug" type="text" placeholder="college-farewell">
+                        </label>
+                        <label>
+                            Description
+                            <textarea name="description" rows="4" placeholder="What should people upload here?"></textarea>
+                        </label>
+                        <label class="switch-row">
+                            <input name="allowUploads" type="checkbox" checked>
+                            <span>Allow contributors to post</span>
+                        </label>
+                        <button class="btn btn-primary wide" type="submit">Create Space</button>
+                    </form>
+                </div>
+
+                <aside class="control-stack reveal delay-1">
+                    <form class="control-card glow-card" id="joinForm">
+                        <div class="card-topline">
+                            <p class="eyebrow">Join Space</p>
+                            <span>03</span>
+                        </div>
+                        <label>
+                            Space link or code
+                            <input name="spaceAccess" type="text" placeholder="Paste a share link or slug like college-farewell">
+                        </label>
+                        <label>
+                            Your display name
+                            <input name="memberName" type="text" placeholder="Login name will be used" required>
+                        </label>
+                        <label>
+                            Role
+                            <select name="role">
+                                <option value="contributor">Contributor</option>
+                                <option value="viewer">Viewer</option>
+                            </select>
+                        </label>
+                        <button class="btn btn-secondary wide" type="submit">Join Selected Space</button>
+                        <p class="helper-text">Paste a shared link or slug to target a specific space. This prototype can only join spaces already saved in this browser.</p>
+                    </form>
+
+                    <form class="control-card glow-card" id="uploadForm">
+                        <div class="card-topline">
+                            <p class="eyebrow">Upload</p>
+                            <span>04</span>
+                        </div>
+                        <label>
+                            Caption
+                            <input name="caption" type="text" placeholder="Ex. Last sunset together">
+                        </label>
+                        <label>
+                            Photos or videos
+                            <input name="media" type="file" accept="image/*,video/*" multiple required>
+                        </label>
+                        <button class="btn btn-primary wide" type="submit">Save Post</button>
+                        <p class="helper-text">Uploads are stored locally in this browser for now.</p>
+                    </form>
+                </aside>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/google-sheet-config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/auth-gate.js"></script>
+    <script src="js/post.js"></script>
+</body>
+</html>
